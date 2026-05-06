@@ -6,6 +6,8 @@
 
   /* ─── Typing animation ─────────────────────────────────────────── */
   const roles = [
+    'Software Engineer',
+    'Backend Engineer',
     'Full-Stack Engineer',
     'AI/ML Developer',
     'Microservices Architect',
