@@ -35,6 +35,9 @@
 </head>
 <body>
 
+<!-- ─── Scroll progress bar ─── -->
+<div class="scroll-progress" aria-hidden="true"></div>
+
 <!-- ─── Cursor spotlight (desktop only) ─── -->
 <div class="cursor-glow" aria-hidden="true"></div>
 
@@ -52,11 +55,12 @@
     </a>
 
     <ul id="nav-menu" role="menubar">
-      <li role="none"><a href="#about"     class="nav-link" role="menuitem"><span>01</span> About</a></li>
-      <li role="none"><a href="#stack"     class="nav-link" role="menuitem"><span>02</span> Stack</a></li>
-      <li role="none"><a href="#work"      class="nav-link" role="menuitem"><span>03</span> Work</a></li>
-      <li role="none"><a href="#journey"   class="nav-link" role="menuitem"><span>04</span> Journey</a></li>
-      <li role="none"><a href="#contact"   class="nav-link" role="menuitem"><span>05</span> Contact</a></li>
+      <li role="none"><a href="#about"        class="nav-link" role="menuitem"><span>01</span> About</a></li>
+      <li role="none"><a href="#stack"        class="nav-link" role="menuitem"><span>02</span> Stack</a></li>
+      <li role="none"><a href="#work"         class="nav-link" role="menuitem"><span>03</span> Work</a></li>
+      <li role="none"><a href="#journey"      class="nav-link" role="menuitem"><span>04</span> Journey</a></li>
+      <li role="none"><a href="#achievements" class="nav-link" role="menuitem"><span>05</span> Achievements</a></li>
+      <li role="none"><a href="#contact"      class="nav-link" role="menuitem"><span>06</span> Contact</a></li>
     </ul>
 
     <a href="#contact" class="nav-cta">
@@ -73,6 +77,7 @@
      HERO
      ═══════════════════════════════════════════════════════════════ -->
 <section id="hero" aria-label="Hero">
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
   <div class="hero-mesh" aria-hidden="true"></div>
 
   <div class="hero-inner hero-split">
@@ -154,7 +159,7 @@
         <div class="photo-ring" aria-hidden="true"></div>
         <div class="photo-ring photo-ring-2" aria-hidden="true"></div>
         <img
-          src="https://github.com/user-attachments/assets/ffb8b594-a206-4b63-b7fc-8adae8779aaf"
+          src="https://github.com/user-attachments/assets/7a7917fb-8213-4677-9d61-b5118f9eabf1"
           alt="Neha Haveri — Software Engineer &amp; Backend Engineer"
           class="profile-photo"
           loading="eager"
@@ -569,16 +574,16 @@
     <!-- Other projects -->
     <div class="work-grid">
 
-      <!-- E-ScriptPro -->
+      <!-- JustGP-Rx -->
       <article class="work-card fade-in" data-tilt style="--card-from:#0ea5e9;--card-to:#6C63FF">
-        <a href="https://github.com/nehahaveri/E-ScriptPro" target="_blank" rel="noopener" class="work-link" aria-label="E-ScriptPro on GitHub"></a>
+        <a href="https://escriptpro.nehahaveri.in/" target="_blank" rel="noopener" class="work-link" aria-label="JustGP-Rx — Live Demo"></a>
         <div class="work-bar"></div>
         <div class="work-body">
           <div class="work-top">
             <span class="work-emoji">🏥</span>
             <span class="work-label">⭐ Healthcare</span>
           </div>
-          <h3>E-ScriptPro</h3>
+          <h3>JustGP-Rx</h3>
           <p class="work-sub">Microservices · Spring Boot</p>
           <p class="work-desc">
             8 decoupled services — api-gateway, auth, doctor, patient, medicine,
@@ -588,6 +593,7 @@
           <div class="work-tags">
             <span>Java</span><span>Spring</span><span>Docker</span><span>AWS S3</span>
           </div>
+          <div class="work-live-badge"><i class="fa-solid fa-circle-dot"></i> Live</div>
           <span class="work-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </div>
       </article>
@@ -727,7 +733,7 @@
           <span class="tl-date">2025</span>
           <h4>Microservices &amp; Healthcare AI</h4>
           <p>
-            Architected E-ScriptPro: 8 decoupled Spring Boot services with API Gateway, AWS S3 storage,
+            Architected JustGP-Rx: 8 decoupled Spring Boot services with API Gateway, AWS S3 storage,
             and CI/CD via GitHub Actions. Shipped PCOS detection model with TensorFlow.
           </p>
           <div class="tl-tags"><span>Spring Boot</span><span>Docker</span><span>TensorFlow</span></div>
@@ -738,12 +744,13 @@
         <div class="tl-dot"></div>
         <div class="tl-content">
           <span class="tl-date">2024</span>
-          <h4>Legal-Tech &amp; Responsible AI</h4>
+          <h4>Legal-Tech, Internship &amp; Community Impact</h4>
           <p>
-            Built DOJ Chatbot with NLP + LLM pipelines for legal information access.
-            Researched bias detection in ML — fairness metrics &amp; mitigation strategies.
+            Built DOJ Chatbot with NLP + LLM pipelines. Earned LinkedIn Campus Ambassador title and
+            LiL Champions 2024 recognition. Completed a Data Science &amp; ML internship.
+            Organized Google DevFest Hubli as part of the core team.
           </p>
-          <div class="tl-tags"><span>NLP</span><span>LLM</span><span>Fairness</span></div>
+          <div class="tl-tags"><span>NLP</span><span>LLM</span><span>Community</span><span>Data Science</span></div>
         </div>
       </li>
 
@@ -751,12 +758,13 @@
         <div class="tl-dot"></div>
         <div class="tl-content">
           <span class="tl-date">2023</span>
-          <h4>Foundation in CS &amp; ML</h4>
+          <h4>Smart India Hackathon &amp; ML Foundations</h4>
           <p>
-            Deep dives into algorithms, data structures, and the math behind ML — linear algebra,
-            optimization, statistics. Started building real things instead of toy examples.
+            Participated in Smart India Hackathon 2023 — solving real government problem statements.
+            Deep dives into algorithms, data structures, and ML math. Started building real systems.
+            Earned Certified Data Scientist credentials from Internz Learn &amp; Internshala.
           </p>
-          <div class="tl-tags"><span>Algorithms</span><span>ML Foundations</span><span>Python</span></div>
+          <div class="tl-tags"><span>SIH 2023</span><span>ML Foundations</span><span>Python</span></div>
         </div>
       </li>
 
@@ -765,32 +773,162 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     STATS — github embeds
+     ACHIEVEMENTS — certs, education & recognitions
      ═══════════════════════════════════════════════════════════════ -->
-<section id="stats" aria-labelledby="stats-title">
+<section id="achievements" aria-labelledby="achievements-title">
   <div class="container">
 
     <header class="section-head fade-in">
-      <span class="section-eyebrow">05 · Activity</span>
-      <h2 class="section-title" id="stats-title">
-        Always <em>shipping</em>, always learning.
+      <span class="section-eyebrow">05 · Achievements</span>
+      <h2 class="section-title" id="achievements-title">
+        Certified. <em>Recognized.</em> Building.
       </h2>
-      <p class="section-subtitle">Live from GitHub.</p>
+      <p class="section-subtitle">Education, certifications &amp; community impact.</p>
     </header>
 
-    <div class="stats-panel fade-in">
-      <div class="stats-row">
-        <img src="https://github-readme-stats.vercel.app/api?username=nehahaveri&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true&bg_color=11111A" alt="Neha Haveri GitHub Stats" loading="lazy" />
-        <img src="https://streak-stats.demolab.com?user=nehahaveri&theme=tokyonight&hide_border=true&background=11111A" alt="Neha Haveri GitHub Streak" loading="lazy" />
-      </div>
-      <div class="stats-row">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nehahaveri&layout=donut&theme=tokyonight&hide_border=true&hide=jupyter%20notebook&bg_color=11111A" alt="Top Languages" loading="lazy" />
-      </div>
-      <div class="stats-row stats-row-trophy">
-        <img src="https://github-profile-trophy.vercel.app/?username=nehahaveri&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=8" alt="GitHub Trophies" loading="lazy" />
-      </div>
+    <!-- Education + Certifications -->
+    <div class="ach-top-grid">
+
+      <!-- Education -->
+      <article class="ach-card ach-edu fade-in" data-tilt>
+        <div class="ach-glow-bar" style="--ach-from:#00D4FF;--ach-to:#38BDF8"></div>
+        <div class="ach-card-inner">
+          <div class="ach-icon-wrap ach-icon-cyan">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="ach-text">
+            <span class="ach-eyebrow">🎓 Education</span>
+            <h4>B.Tech · Computer Science</h4>
+            <p class="ach-org">Jain College of Engineering &amp; Technology</p>
+            <div class="ach-meta-row">
+              <span class="ach-meta-pill"><i class="fa-solid fa-calendar-days"></i> Dec 2021 – June 2025</span>
+              <span class="ach-meta-pill ach-cgpa"><i class="fa-solid fa-star"></i> CGPA: <strong>8.66</strong></span>
+            </div>
+          </div>
+        </div>
+        <div class="ach-shimmer" aria-hidden="true"></div>
+      </article>
+
+      <!-- Cert 1 — Internz Learn -->
+      <article class="ach-card ach-cert fade-in" data-tilt>
+        <div class="ach-glow-bar" style="--ach-from:#8B5CF6;--ach-to:#FF6B9D"></div>
+        <div class="ach-card-inner">
+          <div class="ach-icon-wrap ach-icon-purple">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <div class="ach-text">
+            <span class="ach-eyebrow">📜 Certification</span>
+            <h4>Certified Data Scientist</h4>
+            <p class="ach-org">Internz Learn</p>
+            <div class="ach-meta-row">
+              <span class="ach-meta-pill"><i class="fa-solid fa-fingerprint"></i> ID: IL93378</span>
+            </div>
+          </div>
+        </div>
+        <div class="ach-shimmer" aria-hidden="true"></div>
+      </article>
+
+      <!-- Cert 2 — Internshala -->
+      <article class="ach-card ach-cert fade-in" data-tilt>
+        <div class="ach-glow-bar" style="--ach-from:#FF6B9D;--ach-to:#FBBF24"></div>
+        <div class="ach-card-inner">
+          <div class="ach-icon-wrap ach-icon-warm">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="ach-text">
+            <span class="ach-eyebrow">📜 Certification</span>
+            <h4>Certified Data Scientist</h4>
+            <p class="ach-org">Internshala Trainings</p>
+            <div class="ach-meta-row">
+              <span class="ach-meta-pill"><i class="fa-solid fa-calendar-check"></i> Mar 2024 · Exp Jan 2034</span>
+              <span class="ach-meta-pill"><i class="fa-solid fa-fingerprint"></i> ID: 9xzvtjl6kv3</span>
+            </div>
+            <p class="ach-skills">Data Visualization · Data Mining · +11 skills</p>
+          </div>
+        </div>
+        <div class="ach-shimmer" aria-hidden="true"></div>
+      </article>
+
     </div>
 
+    <!-- Recognitions & Community -->
+    <div class="recog-header fade-in">
+      <span class="recog-label"><i class="fa-solid fa-medal"></i> Recognitions &amp; Community</span>
+    </div>
+
+    <div class="recog-grid">
+
+      <!-- SIH 2023 -->
+      <a href="https://www.linkedin.com/posts/nehahaveri_smartindiahackathon2023-sih2023-smartindiahackathon2023-activity-7145836272052281344-XVws?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener" class="recog-card fade-in" style="--rc-from:#FBBF24;--rc-to:#F97316">
+        <div class="recog-bar"></div>
+        <div class="recog-body">
+          <div class="recog-icon-row">
+            <span class="recog-emoji">🏆</span>
+            <span class="recog-li-badge"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+          </div>
+          <h4>Smart India Hackathon 2023</h4>
+          <p>Participated in India's largest government hackathon — building real solutions for critical problem statements at national scale.</p>
+          <span class="recog-cta">View post <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </a>
+
+      <!-- LinkedIn Campus Ambassador -->
+      <a href="https://www.linkedin.com/posts/nehahaveri_linkedinlearning-linkedin-campusambassador-activity-7161778771971297280-tnO4?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener" class="recog-card fade-in" style="--rc-from:#0077B5;--rc-to:#00D4FF">
+        <div class="recog-bar"></div>
+        <div class="recog-body">
+          <div class="recog-icon-row">
+            <span class="recog-emoji">🌐</span>
+            <span class="recog-li-badge"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+          </div>
+          <h4>LinkedIn Campus Ambassador</h4>
+          <p>Selected as a LinkedIn Learning Campus Ambassador — representing the platform and empowering peers to upskill through curated learning paths.</p>
+          <span class="recog-cta">View post <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </a>
+
+      <!-- LiL Champions 2024 -->
+      <a href="https://www.linkedin.com/posts/nehahaveri_linkedinlearning-certificationcourses-lilchampions2024-activity-7175871996746952704-dg8Q?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener" class="recog-card fade-in" style="--rc-from:#8B5CF6;--rc-to:#38BDF8">
+        <div class="recog-bar"></div>
+        <div class="recog-body">
+          <div class="recog-icon-row">
+            <span class="recog-emoji">🎖️</span>
+            <span class="recog-li-badge"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+          </div>
+          <h4>LiL Champions 2024</h4>
+          <p>Recognized as a LinkedIn Learning Champion 2024 — completing certification courses and inspiring a culture of continuous learning on campus.</p>
+          <span class="recog-cta">View post <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </a>
+
+      <!-- Data Science Internship -->
+      <a href="https://www.linkedin.com/posts/nehahaveri_datascience-machinelearning-internship-activity-7237368402007265280-bevK?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener" class="recog-card fade-in" style="--rc-from:#00FF94;--rc-to:#00D4FF">
+        <div class="recog-bar"></div>
+        <div class="recog-body">
+          <div class="recog-icon-row">
+            <span class="recog-emoji">🧪</span>
+            <span class="recog-li-badge"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+          </div>
+          <h4>Data Science &amp; ML Internship</h4>
+          <p>Completed a hands-on internship in Data Science and Machine Learning — building and deploying real ML pipelines, working with production-grade datasets.</p>
+          <span class="recog-cta">View post <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </a>
+
+      <!-- Google DevFest -->
+      <a href="https://www.linkedin.com/posts/nehahaveri_googledevfest-devfesthubli-organizingteam-activity-7296489285510148096-J_7Z?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener" class="recog-card fade-in" style="--rc-from:#4285F4;--rc-to:#34D399">
+        <div class="recog-bar"></div>
+        <div class="recog-body">
+          <div class="recog-icon-row">
+            <span class="recog-emoji">🌈</span>
+            <span class="recog-li-badge"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+          </div>
+          <h4>Google DevFest Hubli — Organizer</h4>
+          <p>Part of the core organizing team for Google DevFest Hubli — bringing together hundreds of developers for talks, workshops, and community networking.</p>
+          <span class="recog-cta">View post <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </a>
+
+    </div>
   </div>
 </section>
 

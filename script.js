@@ -11,6 +11,7 @@
     'Full-Stack Engineer',
     'AI/ML Developer',
     'Microservices Architect',
+    'Certified Data Scientist',
     'Problem Solver'
   ];
   let roleIndex = 0;
@@ -184,7 +185,7 @@
   /* ─── Bento card spotlight (border glow follows cursor) ───────── */
   function setupBentoSpotlight() {
     if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-    document.querySelectorAll('.bento-card, .stack-cat, .work-card').forEach(card => {
+    document.querySelectorAll('.bento-card, .stack-cat, .work-card, .ach-card, .recog-card').forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
@@ -245,6 +246,123 @@
     });
   }
 
+  /* ─── Scroll progress bar ──────────────────────────────────────── */
+  function setupScrollProgress() {
+    const bar = document.querySelector('.scroll-progress');
+    if (!bar) return;
+    const onScroll = () => {
+      const scrollTop = window.scrollY;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docH ? scrollTop / docH : 0;
+      bar.style.transform = `scaleX(${pct})`;
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  /* ─── Particle constellation canvas ────────────────────────────── */
+  function setupParticles() {
+    const canvas = document.getElementById('particles-canvas');
+    if (!canvas) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const ctx = canvas.getContext('2d');
+
+    let W, H;
+    const particles = [];
+    const MAX_DIST = 130;
+    const MAX_SPEED = 0.9;
+
+    function resize() {
+      W = canvas.width = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    const COUNT = Math.min(90, Math.floor((W * H) / 10000));
+
+    for (let i = 0; i < COUNT; i++) {
+      particles.push({
+        x:  Math.random() * W,
+        y:  Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        r:  Math.random() * 1.6 + 0.4,
+        a:  Math.random() * 0.55 + 0.2,
+      });
+    }
+
+    let mouseX = W / 2, mouseY = H / 2;
+    const heroEl = document.getElementById('hero');
+    if (heroEl) {
+      heroEl.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+      }, { passive: true });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+
+        // nudge toward mouse
+        const dx = mouseX - p.x;
+        const dy = mouseY - p.y;
+        const md = Math.hypot(dx, dy);
+        if (md < 180) {
+          p.vx += (dx / md) * 0.012;
+          p.vy += (dy / md) * 0.012;
+        }
+
+        // dampen & cap speed
+        p.vx *= 0.98;
+        p.vy *= 0.98;
+        const speed = Math.hypot(p.vx, p.vy);
+        if (speed > MAX_SPEED) {
+          p.vx = (p.vx / speed) * MAX_SPEED;
+          p.vy = (p.vy / speed) * MAX_SPEED;
+        }
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // wrap
+        if (p.x < 0)  p.x = W;
+        if (p.x > W)  p.x = 0;
+        if (p.y < 0)  p.y = H;
+        if (p.y > H)  p.y = 0;
+
+        // draw dot
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0,212,255,${p.a})`;
+        ctx.fill();
+
+        // connect nearby
+        for (let j = i + 1; j < particles.length; j++) {
+          const q = particles[j];
+          const dist = Math.hypot(p.x - q.x, p.y - q.y);
+          if (dist < MAX_DIST) {
+            const alpha = (1 - dist / MAX_DIST) * 0.18;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.strokeStyle = `rgba(0,212,255,${alpha})`;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+  }
+
   /* ─── Init ──────────────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', () => {
     type();
@@ -258,6 +376,8 @@
     setupBentoSpotlight();
     setupCounters();
     setupSmoothAnchors();
+    setupScrollProgress();
+    setupParticles();
   });
 
 })();
