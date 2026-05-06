@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0A0A0F" />
+  <meta name="description" content="Neha Haveri — Full-Stack Engineer, AI/ML Developer & Microservices Architect. Building production systems for healthcare, fintech, and marketplace domains." />
+  <meta name="keywords" content="Neha Haveri, Full Stack Developer, AI ML Engineer, Microservices, Next.js, Spring Boot, TensorFlow, Portfolio" />
+  <meta name="author" content="Neha Haveri" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Neha Haveri · Full-Stack & AI/ML Engineer" />
+  <meta property="og:description" content="Building intelligent systems end-to-end — deep learning, microservices, and full-stack platforms." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.nehahaveri.in" />
+
+  <title>Neha Haveri · Full-Stack & AI/ML Engineer</title>
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+  <!-- Fonts: Inter (body) · Instrument Serif (display italic) · JetBrains Mono (code) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236C63FF'/%3E%3Cstop offset='100%25' stop-color='%23FF7A59'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230A0A0F'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-family='Inter,sans-serif' font-size='52' font-weight='900' fill='url(%23g)'%3ENH%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<!-- ─── Cursor spotlight (desktop only) ─── -->
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- ─── Grain overlay ─── -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     NAVBAR
+     ═══════════════════════════════════════════════════════════════ -->
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Home">
+      <span class="logo-mark">NH</span>
+      <span class="logo-dot" aria-hidden="true"></span>
+    </a>
+
+    <ul id="nav-menu" role="menubar">
+      <li role="none"><a href="#about"     class="nav-link" role="menuitem"><span>01</span> About</a></li>
+      <li role="none"><a href="#stack"     class="nav-link" role="menuitem"><span>02</span> Stack</a></li>
+      <li role="none"><a href="#work"      class="nav-link" role="menuitem"><span>03</span> Work</a></li>
+      <li role="none"><a href="#journey"   class="nav-link" role="menuitem"><span>04</span> Journey</a></li>
+      <li role="none"><a href="#contact"   class="nav-link" role="menuitem"><span>05</span> Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-cta">
+      Let's talk <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+    <button id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-mesh" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-status">
+      <span class="status-dot" aria-hidden="true"></span>
+      Available for opportunities · Bengaluru, IN
+    </div>
+
+    <h1 class="hero-name">
+      <span class="line"><span class="word">Hello,</span></span>
+      <span class="line"><span class="word">I'm</span> <span class="word italic">Neha.</span></span>
+    </h1>
+
+    <p class="hero-role" aria-live="polite">
+      I build as a
+      <span class="role-rotator">
+        <span id="typing-text"></span><span class="cursor-blink" aria-hidden="true"></span>
+      </span>
+    </p>
+
+    <p class="hero-bio">
+      End-to-end software — production microservices, deep-learning models, and real-time
+      web platforms across <em>healthcare</em>, <em>fintech</em>, and <em>legal-tech</em>.
+      Currently shipping <a href="#work" class="link-hi">GigKart</a>.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#work" class="btn btn-primary magnetic" data-mag="0.4">
+        <span class="btn-content">
+          <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+          See selected work
+        </span>
+        <span class="btn-shine" aria-hidden="true"></span>
+      </a>
+      <a href="https://github.com/nehahaveri" target="_blank" rel="noopener" class="btn btn-ghost magnetic" data-mag="0.4">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        @nehahaveri
+      </a>
+    </div>
+
+    <ul class="hero-stats" aria-label="Quick stats">
+      <li>
+        <span class="stat-num" data-count="6">0</span><span class="stat-suffix">+</span>
+        <span class="stat-label">production projects</span>
+      </li>
+      <li>
+        <span class="stat-num" data-count="8">0</span>
+        <span class="stat-label">microservices shipped</span>
+      </li>
+      <li>
+        <span class="stat-num" data-count="15">0</span><span class="stat-suffix">+</span>
+        <span class="stat-label">technologies mastered</span>
+      </li>
+      <li>
+        <span class="stat-num">∞</span>
+        <span class="stat-label">cups of chai</span>
+      </li>
+    </ul>
+
+    <div class="hero-socials" aria-label="Social links">
+      <a href="https://github.com/nehahaveri" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nehahaveri/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:nehahaveri124@gmail.com" aria-label="Email">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+
+  <a href="#marquee" class="scroll-down" aria-label="Scroll down">
+    <span>scroll</span>
+    <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+  </a>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MARQUEE — infinite scrolling tech ribbon
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="marquee" aria-label="Tech I work with daily">
+  <div class="marquee">
+    <div class="marquee-track">
+      <!-- group 1 -->
+      <span class="m-item">TypeScript</span><span class="m-dot">✦</span>
+      <span class="m-item">Next.js&nbsp;14</span><span class="m-dot">✦</span>
+      <span class="m-item">Spring&nbsp;Boot</span><span class="m-dot">✦</span>
+      <span class="m-item">PostgreSQL</span><span class="m-dot">✦</span>
+      <span class="m-item">PostGIS</span><span class="m-dot">✦</span>
+      <span class="m-item">Supabase</span><span class="m-dot">✦</span>
+      <span class="m-item">Docker</span><span class="m-dot">✦</span>
+      <span class="m-item">TensorFlow</span><span class="m-dot">✦</span>
+      <span class="m-item">Razorpay</span><span class="m-dot">✦</span>
+      <span class="m-item">AWS&nbsp;S3</span><span class="m-dot">✦</span>
+      <span class="m-item">Tailwind</span><span class="m-dot">✦</span>
+      <span class="m-item">Python</span><span class="m-dot">✦</span>
+      <span class="m-item">Java</span><span class="m-dot">✦</span>
+      <!-- duplicate (keeps loop seamless) -->
+      <span class="m-item">TypeScript</span><span class="m-dot">✦</span>
+      <span class="m-item">Next.js&nbsp;14</span><span class="m-dot">✦</span>
+      <span class="m-item">Spring&nbsp;Boot</span><span class="m-dot">✦</span>
+      <span class="m-item">PostgreSQL</span><span class="m-dot">✦</span>
+      <span class="m-item">PostGIS</span><span class="m-dot">✦</span>
+      <span class="m-item">Supabase</span><span class="m-dot">✦</span>
+      <span class="m-item">Docker</span><span class="m-dot">✦</span>
+      <span class="m-item">TensorFlow</span><span class="m-dot">✦</span>
+      <span class="m-item">Razorpay</span><span class="m-dot">✦</span>
+      <span class="m-item">AWS&nbsp;S3</span><span class="m-dot">✦</span>
+      <span class="m-item">Tailwind</span><span class="m-dot">✦</span>
+      <span class="m-item">Python</span><span class="m-dot">✦</span>
+      <span class="m-item">Java</span><span class="m-dot">✦</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     ABOUT — bento grid
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="about" aria-labelledby="about-title">
+  <div class="container">
+
+    <header class="section-head fade-in">
+      <span class="section-eyebrow">01 · About</span>
+      <h2 class="section-title" id="about-title">
+        Built across the <em>full</em> stack — model, server, and pixel.
+      </h2>
+      <p class="section-subtitle">
+        A little context behind the commits.
+      </p>
+    </header>
+
+    <div class="bento">
+
+      <!-- Bio (large) -->
+      <article class="bento-card bento-bio fade-in">
+        <div class="bento-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+        <h3>Hey, I'm Neha 👋</h3>
+        <p>
+          I'm a <span class="hl">Full-Stack &amp; AI/ML Engineer</span> who builds things end-to-end —
+          production microservices, intelligent deep-learning models, and real-time web platforms.
+        </p>
+        <p>
+          My work lives at the intersection of <span class="hl">clean architecture</span>,
+          <span class="hl">scalable infra</span>, and <span class="hl">real user impact</span>.
+          I care about systems that are maintainable, observable, and actually shipped.
+        </p>
+
+        <div class="domain-tags">
+          <span class="dt">🏥 Healthcare AI</span>
+          <span class="dt">💳 Fintech</span>
+          <span class="dt">⚖️ Legal-Tech</span>
+          <span class="dt">🛍️ Marketplace</span>
+        </div>
+      </article>
+
+      <!-- Currently building -->
+      <article class="bento-card bento-now fade-in">
+        <div class="now-pulse" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <span class="bento-eyebrow">● Now</span>
+        <h4>Building GigKart</h4>
+        <p>
+          Hyperlocal micro-gig marketplace — Next.js 14, Supabase + PostGIS,
+          Razorpay escrow with auto-release cron.
+        </p>
+        <a href="#work" class="bento-link">See breakdown <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- Location card -->
+      <article class="bento-card bento-loc fade-in">
+        <div class="loc-grid" aria-hidden="true">
+          <span class="loc-pin"></span>
+        </div>
+        <span class="bento-eyebrow"><i class="fa-solid fa-location-dot"></i> Located</span>
+        <h4>Bengaluru, India</h4>
+        <p>UTC +5:30 · Open to remote &amp; hybrid roles globally.</p>
+      </article>
+
+      <!-- Counters -->
+      <article class="bento-card bento-count fade-in">
+        <span class="bento-eyebrow"><i class="fa-solid fa-chart-line"></i> By the numbers</span>
+        <ul class="counter-list">
+          <li>
+            <span class="c-num" data-count="50">0</span><span>+</span>
+            <small>repositories</small>
+          </li>
+          <li>
+            <span class="c-num" data-count="6">0</span>
+            <small>domains shipped</small>
+          </li>
+          <li>
+            <span class="c-num" data-count="3">0</span>
+            <small>full-stack platforms</small>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Code block -->
+      <article class="bento-card bento-code fade-in">
+        <div class="code-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="code-file">neha.config.ts</span>
+        </div>
+        <div class="code-body">
+<pre><code><span class="ln"> 1</span> <span class="cmt">// who I am, in a type-safe way</span>
+<span class="ln"> 2</span>
+<span class="ln"> 3</span> <span class="key">export const</span> <span class="arr">neha</span> <span class="punc">= {</span>
+<span class="ln"> 4</span>   <span class="prop">name</span><span class="punc">:</span>     <span class="str">"Neha Haveri"</span><span class="punc">,</span>
+<span class="ln"> 5</span>   <span class="prop">role</span><span class="punc">:</span>     <span class="str">"Full-Stack · AI/ML · Microservices"</span><span class="punc">,</span>
+<span class="ln"> 6</span>   <span class="prop">stack</span><span class="punc">:</span> <span class="punc">{</span>
+<span class="ln"> 7</span>     <span class="prop">lang</span><span class="punc">:</span>     <span class="punc">[</span><span class="str">"TS"</span><span class="punc">,</span> <span class="str">"Java"</span><span class="punc">,</span> <span class="str">"Python"</span><span class="punc">],</span>
+<span class="ln"> 8</span>     <span class="prop">frontend</span><span class="punc">:</span> <span class="punc">[</span><span class="str">"Next.js"</span><span class="punc">,</span> <span class="str">"React"</span><span class="punc">,</span> <span class="str">"Tailwind"</span><span class="punc">],</span>
+<span class="ln"> 9</span>     <span class="prop">backend</span><span class="punc">:</span>  <span class="punc">[</span><span class="str">"Spring"</span><span class="punc">,</span> <span class="str">"Node"</span><span class="punc">,</span> <span class="str">"PostGIS"</span><span class="punc">],</span>
+<span class="ln">10</span>     <span class="prop">ai</span><span class="punc">:</span>       <span class="punc">[</span><span class="str">"TF"</span><span class="punc">,</span> <span class="str">"Keras"</span><span class="punc">,</span> <span class="str">"sklearn"</span><span class="punc">]</span>
+<span class="ln">11</span>   <span class="punc">},</span>
+<span class="ln">12</span>   <span class="prop">caresAbout</span><span class="punc">:</span> <span class="punc">[</span>
+<span class="ln">13</span>     <span class="str">"Clean architecture"</span><span class="punc">,</span>
+<span class="ln">14</span>     <span class="str">"Responsible AI"</span><span class="punc">,</span>
+<span class="ln">15</span>     <span class="str">"Developer experience"</span>
+<span class="ln">16</span>   <span class="punc">],</span>
+<span class="ln">17</span>   <span class="prop">availability</span><span class="punc">:</span> <span class="bool">true</span><span class="cmt"> // open to roles</span>
+<span class="ln">18</span> <span class="punc">} as const;</span></code></pre>
+        </div>
+      </article>
+
+      <!-- Open-to roles -->
+      <article class="bento-card bento-open fade-in">
+        <span class="bento-eyebrow"><i class="fa-solid fa-briefcase"></i> Open to</span>
+        <ul class="role-list">
+          <li><span>Full-Stack Engineering</span> <i class="fa-solid fa-check"></i></li>
+          <li><span>Backend &amp; API Design</span> <i class="fa-solid fa-check"></i></li>
+          <li><span>ML / AI Engineering</span> <i class="fa-solid fa-check"></i></li>
+          <li><span>Microservices Architecture</span> <i class="fa-solid fa-check"></i></li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     STACK
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="stack" aria-labelledby="stack-title">
+  <div class="container">
+
+    <header class="section-head fade-in">
+      <span class="section-eyebrow">02 · Stack</span>
+      <h2 class="section-title" id="stack-title">
+        The tools <em>behind</em> the work.
+      </h2>
+      <p class="section-subtitle">From metal to model to UI — every layer.</p>
+    </header>
+
+    <div class="stack-grid">
+
+      <!-- Languages -->
+      <div class="stack-cat fade-in">
+        <header>
+          <i class="fa-solid fa-code"></i>
+          <h4>Languages</h4>
+          <span class="cat-count">5</span>
+        </header>
+        <div class="chips">
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" /> TypeScript</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" /> Java</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" /> Python</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" /> JavaScript</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" /> SQL</span>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="stack-cat fade-in">
+        <header>
+          <i class="fa-solid fa-display"></i>
+          <h4>Frontend</h4>
+          <span class="cat-count">5</span>
+        </header>
+        <div class="chips">
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" style="filter:invert(1)" /> Next.js&nbsp;14</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" /> React</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" alt="" /> Vite</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="" /> Tailwind</span>
+          <span class="chip"><i class="fa-solid fa-cube" style="color:#fff"></i> shadcn/ui</span>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="stack-cat fade-in">
+        <header>
+          <i class="fa-solid fa-server"></i>
+          <h4>Backend</h4>
+          <span class="cat-count">4</span>
+        </header>
+        <div class="chips">
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="" /> Spring Boot</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" /> Node.js</span>
+          <span class="chip"><i class="fa-solid fa-route" style="color:var(--accent)"></i> API Gateway</span>
+          <span class="chip"><i class="fa-solid fa-network-wired" style="color:var(--accent2)"></i> Microservices</span>
+        </div>
+      </div>
+
+      <!-- DB & Cloud -->
+      <div class="stack-cat fade-in">
+        <header>
+          <i class="fa-solid fa-database"></i>
+          <h4>Data &amp; Cloud</h4>
+          <span class="cat-count">5</span>
+        </header>
+        <div class="chips">
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" /> PostgreSQL</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" alt="" /> Supabase</span>
+          <span class="chip"><i class="fa-solid fa-map-location-dot" style="color:var(--accent)"></i> PostGIS</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" /> Docker</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" /> AWS S3</span>
+        </div>
+      </div>
+
+      <!-- AI/ML -->
+      <div class="stack-cat fade-in">
+        <header>
+          <i class="fa-solid fa-brain"></i>
+          <h4>AI / ML</h4>
+          <span class="cat-count">6</span>
+        </header>
+        <div class="chips">
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="" /> TensorFlow</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="" /> Keras</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="" /> scikit-learn</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="" /> Pandas</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="" /> NumPy</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="" /> Jupyter</span>
+        </div>
+      </div>
+
+      <!-- Tooling -->
+      <div class="stack-cat fade-in">
+        <header>
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <h4>Tooling</h4>
+          <span class="cat-count">6</span>
+        </header>
+        <div class="chips">
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" /> Git</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" style="filter:invert(1)" /> GH Actions</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="" /> Postman</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="" /> VS Code</span>
+          <span class="chip"><i class="fa-solid fa-credit-card" style="color:var(--accent)"></i> Razorpay</span>
+          <span class="chip"><i class="fa-brands fa-google" style="color:#4285F4"></i> Maps API</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     WORK — featured + grid
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="work" aria-labelledby="work-title">
+  <div class="container">
+
+    <header class="section-head fade-in">
+      <span class="section-eyebrow">03 · Work</span>
+      <h2 class="section-title" id="work-title">
+        Selected work, <em>shipped</em>.
+      </h2>
+      <p class="section-subtitle">A few systems I'm proud of.</p>
+    </header>
+
+    <!-- Featured: GigKart -->
+    <article class="featured fade-in" data-tilt>
+      <div class="featured-meta">
+        <span class="feat-badge">⭑ Most recent · most ambitious</span>
+        <h3 class="featured-title">GigKart</h3>
+        <p class="featured-sub">Hyperlocal micro-gig marketplace · production-grade</p>
+
+        <p class="featured-desc">
+          A full marketplace where posters list local tasks (cleaning, tutoring, delivery)
+          and taskers bid &amp; complete them — payments held in <em>Razorpay escrow</em>,
+          auto-released after 48&nbsp;hrs, with disputes flowing to admins.
+        </p>
+
+        <ul class="featured-points">
+          <li><i class="fa-solid fa-location-crosshairs"></i> Geo-radius search using <code>PostGIS&nbsp;ST_DWithin</code></li>
+          <li><i class="fa-solid fa-vault"></i> Razorpay escrow + UPI payouts via Razorpay Route</li>
+          <li><i class="fa-solid fa-clock-rotate-left"></i> Cron auto-release after 48&nbsp;hrs of inactivity</li>
+          <li><i class="fa-solid fa-bolt"></i> Real-time chat &amp; notifications via SSE</li>
+          <li><i class="fa-solid fa-cube"></i> Fully Dockerized · JSON-LD SEO per listing</li>
+        </ul>
+
+        <div class="featured-tags">
+          <span class="tag">Next.js&nbsp;14</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">PostgreSQL + PostGIS</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">Razorpay</span>
+          <span class="tag">Docker</span>
+        </div>
+
+        <div class="featured-ctas">
+          <a href="https://github.com/nehahaveri/gigkart" target="_blank" rel="noopener" class="btn btn-primary magnetic" data-mag="0.3">
+            <span class="btn-content">
+              <i class="fa-brands fa-github"></i> View Repository
+            </span>
+            <span class="btn-shine" aria-hidden="true"></span>
+          </a>
+          <a href="https://github.com/nehahaveri/gigkart#readme" target="_blank" rel="noopener" class="btn btn-ghost magnetic" data-mag="0.3">
+            <i class="fa-solid fa-book-open"></i> Read the docs
+          </a>
+        </div>
+      </div>
+
+      <!-- Mock UI preview -->
+      <div class="featured-visual" aria-hidden="true">
+        <div class="mock-window">
+          <div class="mock-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="mock-url">gigkart.in/jobs</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-row">
+              <div class="mock-pill mock-pill-on">📍 Within 5km</div>
+              <div class="mock-pill">All categories</div>
+              <div class="mock-pill">₹500 – ₹5k</div>
+            </div>
+            <div class="mock-job">
+              <div class="mj-head">
+                <div>
+                  <strong>Deep clean — 2 BHK in Indiranagar</strong>
+                  <small>Posted 4 min ago · 1.2km away</small>
+                </div>
+                <div class="mj-price">₹1,800</div>
+              </div>
+              <div class="mj-tags">
+                <span>cleaning</span><span>same-day</span><span>urgent</span>
+              </div>
+            </div>
+            <div class="mock-job mock-job-2">
+              <div class="mj-head">
+                <div>
+                  <strong>Math tutor — Class 10 ICSE</strong>
+                  <small>Posted 12 min ago · 2.4km away</small>
+                </div>
+                <div class="mj-price">₹650 / hr</div>
+              </div>
+              <div class="mj-tags">
+                <span>tutoring</span><span>weekly</span>
+              </div>
+            </div>
+            <div class="mock-status">
+              <span class="ms-dot"></span>
+              <span>Escrow secured · 48hr auto-release</span>
+            </div>
+          </div>
+        </div>
+        <div class="featured-glow" aria-hidden="true"></div>
+      </div>
+    </article>
+
+    <!-- Other projects -->
+    <div class="work-grid">
+
+      <!-- E-ScriptPro -->
+      <article class="work-card fade-in" data-tilt style="--card-from:#0ea5e9;--card-to:#6C63FF">
+        <a href="https://github.com/nehahaveri/E-ScriptPro" target="_blank" rel="noopener" class="work-link" aria-label="E-ScriptPro on GitHub"></a>
+        <div class="work-bar"></div>
+        <div class="work-body">
+          <div class="work-top">
+            <span class="work-emoji">🏥</span>
+            <span class="work-label">⭐ Healthcare</span>
+          </div>
+          <h3>E-ScriptPro</h3>
+          <p class="work-sub">Microservices · Spring Boot</p>
+          <p class="work-desc">
+            8 decoupled services — api-gateway, auth, doctor, patient, medicine,
+            prescription, receptionist, pdf — orchestrated with Docker Compose
+            and CI/CD via GitHub Actions.
+          </p>
+          <div class="work-tags">
+            <span>Java</span><span>Spring</span><span>Docker</span><span>AWS S3</span>
+          </div>
+          <span class="work-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </article>
+
+      <!-- TERRIOR -->
+      <article class="work-card fade-in" data-tilt style="--card-from:#38bdf8;--card-to:#34d399">
+        <a href="https://github.com/nehahaveri/TERRIOR-CLIENT" target="_blank" rel="noopener" class="work-link" aria-label="TERRIOR-CLIENT on GitHub"></a>
+        <div class="work-bar"></div>
+        <div class="work-body">
+          <div class="work-top">
+            <span class="work-emoji">🍷</span>
+            <span class="work-label">Full-Stack</span>
+          </div>
+          <h3>TERRIOR-CLIENT</h3>
+          <p class="work-sub">Full-stack TypeScript app</p>
+          <p class="work-desc">
+            React + Vite frontend paired with a dedicated backend, clean component
+            architecture, and PLpgSQL-backed data layer.
+          </p>
+          <div class="work-tags">
+            <span>TypeScript</span><span>React</span><span>Vite</span><span>Tailwind</span>
+          </div>
+          <span class="work-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </article>
+
+      <!-- PCOS -->
+      <article class="work-card fade-in" data-tilt style="--card-from:#f472b6;--card-to:#a855f7">
+        <a href="https://github.com/nehahaveri/Advance-PCOS-detection-using-Deep-Learning" target="_blank" rel="noopener" class="work-link" aria-label="PCOS Detection on GitHub"></a>
+        <div class="work-bar"></div>
+        <div class="work-body">
+          <div class="work-top">
+            <span class="work-emoji">🧬</span>
+            <span class="work-label">Healthcare AI</span>
+          </div>
+          <h3>PCOS Detection</h3>
+          <p class="work-sub">Deep learning · computer vision</p>
+          <p class="work-desc">
+            AI-powered diagnostic tool for early PCOS detection from medical
+            imaging, using deep learning models built with TensorFlow &amp; Keras.
+          </p>
+          <div class="work-tags">
+            <span>Python</span><span>TensorFlow</span><span>Keras</span><span>CV</span>
+          </div>
+          <span class="work-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </article>
+
+      <!-- DOJ Chatbot -->
+      <article class="work-card fade-in" data-tilt style="--card-from:#fbbf24;--card-to:#f97316">
+        <a href="https://github.com/nehahaveri/DOJ-chatbot" target="_blank" rel="noopener" class="work-link" aria-label="DOJ Chatbot on GitHub"></a>
+        <div class="work-bar"></div>
+        <div class="work-body">
+          <div class="work-top">
+            <span class="work-emoji">💬</span>
+            <span class="work-label">⭐ Legal-Tech</span>
+          </div>
+          <h3>DOJ Chatbot</h3>
+          <p class="work-sub">NLP &amp; conversational AI</p>
+          <p class="work-desc">
+            Intelligent chatbot for Department of Justice queries, combining
+            NLP pipelines and LLM-powered responses for legal information.
+          </p>
+          <div class="work-tags">
+            <span>Python</span><span>NLP</span><span>LLM</span><span>Jupyter</span>
+          </div>
+          <span class="work-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </article>
+
+      <!-- Bias in AI -->
+      <article class="work-card fade-in" data-tilt style="--card-from:#34d399;--card-to:#0ea5e9">
+        <a href="https://github.com/nehahaveri/Identifying-and-Mitigating-Bias-in-AI-Data" target="_blank" rel="noopener" class="work-link" aria-label="Bias in AI Data on GitHub"></a>
+        <div class="work-bar"></div>
+        <div class="work-body">
+          <div class="work-top">
+            <span class="work-emoji">⚖️</span>
+            <span class="work-label">Responsible AI</span>
+          </div>
+          <h3>Bias in AI Data</h3>
+          <p class="work-sub">Fairness · ML research</p>
+          <p class="work-desc">
+            Research on bias detection and fairness in ML pipelines — covering
+            statistical bias metrics, mitigation strategies &amp; ethical AI principles.
+          </p>
+          <div class="work-tags">
+            <span>Python</span><span>scikit-learn</span><span>Pandas</span>
+          </div>
+          <span class="work-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </article>
+
+      <!-- View all -->
+      <a href="https://github.com/nehahaveri" target="_blank" rel="noopener" class="work-card work-cta fade-in">
+        <div class="cta-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        <h3>See all on GitHub</h3>
+        <p>50+ public repositories — research notebooks, side projects, experiments.</p>
+        <span class="cta-link">@nehahaveri →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     JOURNEY — timeline
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="journey" aria-labelledby="journey-title">
+  <div class="container">
+
+    <header class="section-head fade-in">
+      <span class="section-eyebrow">04 · Journey</span>
+      <h2 class="section-title" id="journey-title">
+        From notebooks to <em>production</em>.
+      </h2>
+      <p class="section-subtitle">Milestones along the way.</p>
+    </header>
+
+    <ol class="timeline">
+
+      <li class="tl-item fade-in">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">Now · 2026</span>
+          <h4>Building GigKart</h4>
+          <p>
+            Shipping a hyperlocal marketplace solo — Next.js 14 App Router, Supabase + PostGIS for geo,
+            Razorpay escrow with cron auto-release, SSE chat. Production-grade architecture.
+          </p>
+          <div class="tl-tags"><span>Next.js</span><span>PostGIS</span><span>Razorpay</span></div>
+        </div>
+      </li>
+
+      <li class="tl-item fade-in">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2025</span>
+          <h4>Microservices &amp; Healthcare AI</h4>
+          <p>
+            Architected E-ScriptPro: 8 decoupled Spring Boot services with API Gateway, AWS S3 storage,
+            and CI/CD via GitHub Actions. Shipped PCOS detection model with TensorFlow.
+          </p>
+          <div class="tl-tags"><span>Spring Boot</span><span>Docker</span><span>TensorFlow</span></div>
+        </div>
+      </li>
+
+      <li class="tl-item fade-in">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2024</span>
+          <h4>Legal-Tech &amp; Responsible AI</h4>
+          <p>
+            Built DOJ Chatbot with NLP + LLM pipelines for legal information access.
+            Researched bias detection in ML — fairness metrics &amp; mitigation strategies.
+          </p>
+          <div class="tl-tags"><span>NLP</span><span>LLM</span><span>Fairness</span></div>
+        </div>
+      </li>
+
+      <li class="tl-item fade-in">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2023</span>
+          <h4>Foundation in CS &amp; ML</h4>
+          <p>
+            Deep dives into algorithms, data structures, and the math behind ML — linear algebra,
+            optimization, statistics. Started building real things instead of toy examples.
+          </p>
+          <div class="tl-tags"><span>Algorithms</span><span>ML Foundations</span><span>Python</span></div>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     STATS — github embeds
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="stats" aria-labelledby="stats-title">
+  <div class="container">
+
+    <header class="section-head fade-in">
+      <span class="section-eyebrow">05 · Activity</span>
+      <h2 class="section-title" id="stats-title">
+        Always <em>shipping</em>, always learning.
+      </h2>
+      <p class="section-subtitle">Live from GitHub.</p>
+    </header>
+
+    <div class="stats-panel fade-in">
+      <div class="stats-row">
+        <img src="https://github-readme-stats.vercel.app/api?username=nehahaveri&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true&bg_color=11111A" alt="Neha Haveri GitHub Stats" loading="lazy" />
+        <img src="https://streak-stats.demolab.com?user=nehahaveri&theme=tokyonight&hide_border=true&background=11111A" alt="Neha Haveri GitHub Streak" loading="lazy" />
+      </div>
+      <div class="stats-row">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nehahaveri&layout=donut&theme=tokyonight&hide_border=true&hide=jupyter%20notebook&bg_color=11111A" alt="Top Languages" loading="lazy" />
+      </div>
+      <div class="stats-row stats-row-trophy">
+        <img src="https://github-profile-trophy.vercel.app/?username=nehahaveri&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=8" alt="GitHub Trophies" loading="lazy" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CONTACT
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="container">
+
+    <div class="contact-shell fade-in">
+      <span class="section-eyebrow">06 · Contact</span>
+
+      <h2 class="contact-headline" id="contact-title">
+        Let's build <em>something</em><br/>worth shipping.
+      </h2>
+
+      <p class="contact-note">
+        Open to full-stack, backend, and ML engineering roles — and to interesting collaborations.
+        I read every message.
+      </p>
+
+      <a href="mailto:nehahaveri124@gmail.com" class="email-cta magnetic" data-mag="0.25">
+        <span class="email-label">say hello →</span>
+        <span class="email-addr">nehahaveri124@gmail.com</span>
+      </a>
+
+      <div class="contact-grid">
+        <a href="https://www.linkedin.com/in/nehahaveri/" target="_blank" rel="noopener" class="contact-tile">
+          <i class="fa-brands fa-linkedin-in"></i>
+          <div>
+            <strong>LinkedIn</strong>
+            <span>professional network</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+        </a>
+        <a href="https://github.com/nehahaveri" target="_blank" rel="noopener" class="contact-tile">
+          <i class="fa-brands fa-github"></i>
+          <div>
+            <strong>GitHub</strong>
+            <span>code &amp; experiments</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+        </a>
+        <a href="mailto:nehahaveri124@gmail.com" class="contact-tile">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <strong>Email</strong>
+            <span>direct &amp; fastest</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+        </a>
+      </div>
+
+      <span class="contact-status">
+        <span class="status-dot"></span>
+        Open to opportunities · Bengaluru, IN · Remote-friendly
+      </span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="container footer-inner">
+    <div class="foot-mark">
+      <span class="logo-mark">NH</span>
+      <small>© 2026 Neha Haveri</small>
+    </div>
+    <p class="foot-quote">
+      <em>"First, solve the problem. Then, write the code."</em> — John Johnson
+    </p>
+    <div class="foot-links">
+      <a href="https://github.com/nehahaveri" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/nehahaveri/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="mailto:nehahaveri124@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Back-to-top -->
+<a href="#hero" class="back-top" aria-label="Back to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
