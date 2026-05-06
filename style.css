@@ -2400,6 +2400,8 @@ footer {
 }
 .ach-card:hover::before,
 .recog-card:hover::before { opacity: 1; }
+
+@media (max-width: 1200px) {
   .recog-grid { grid-template-columns: repeat(3, 1fr); }
   .ach-top-grid { grid-template-columns: 1fr 1fr; }
   .ach-edu { grid-column: span 2; }
