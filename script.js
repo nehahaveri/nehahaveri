@@ -185,7 +185,7 @@
   /* ─── Bento card spotlight (border glow follows cursor) ───────── */
   function setupBentoSpotlight() {
     if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-    document.querySelectorAll('.bento-card, .stack-cat, .work-card, .ach-card, .recog-card').forEach(card => {
+    document.querySelectorAll('.bento-card, .stack-cat, .work-card, .ach-card, .recog-card, .beyond-card').forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
