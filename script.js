@@ -164,7 +164,8 @@
   /* ─── Tilt cards ───────────────────────────────────────────────── */
   function setupTilt() {
     if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-    const cards = document.querySelectorAll('[data-tilt]');
+    // Exclude hero-tilt from generic handler; it has its own dedicated setup
+    const cards = document.querySelectorAll('[data-tilt]:not(.hero-tilt)');
 
     cards.forEach(card => {
       const onMove = (e) => {
@@ -180,6 +181,52 @@
       card.addEventListener('mousemove', onMove);
       card.addEventListener('mouseleave', onLeave);
     });
+  }
+
+  /* ─── Hero 3D scene — full-hero parallax + scroll tilt ────────── */
+  function setupHero3D() {
+    if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    const heroEl  = document.getElementById('hero');
+    const tiltEl  = document.querySelector('.hero-tilt');
+    const sceneEl = document.getElementById('hero-3d-scene');
+    if (!heroEl || !tiltEl) return;
+
+    let targetRX = 0, targetRY = 0;
+    let curRX = 0, curRY = 0;
+
+    // Smooth lerp loop
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function loop() {
+      curRX = lerp(curRX, targetRX, 0.08);
+      curRY = lerp(curRY, targetRY, 0.08);
+      tiltEl.style.transform =
+        `perspective(1400px) rotateX(${curRX}deg) rotateY(${curRY}deg)`;
+      requestAnimationFrame(loop);
+    }
+    loop();
+
+    // Mouse parallax (over the full hero section)
+    heroEl.addEventListener('mousemove', (e) => {
+      const rect = heroEl.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      targetRX = (y - 0.5) * -10;
+      targetRY = (x - 0.5) *  12;
+    }, { passive: true });
+
+    heroEl.addEventListener('mouseleave', () => {
+      targetRX = 0;
+      targetRY = 0;
+    });
+
+    // Subtle scroll-based scene drift
+    if (sceneEl) {
+      window.addEventListener('scroll', () => {
+        const ratio = Math.min(window.scrollY / window.innerHeight, 1);
+        sceneEl.style.transform = `translateY(${ratio * 60}px)`;
+      }, { passive: true });
+    }
   }
 
   /* ─── Bento card spotlight (border glow follows cursor) ───────── */
@@ -373,6 +420,7 @@
     setupCursorGlow();
     setupMagnetic();
     setupTilt();
+    setupHero3D();
     setupBentoSpotlight();
     setupCounters();
     setupSmoothAnchors();
