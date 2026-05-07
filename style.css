@@ -405,46 +405,149 @@ body::after {
   justify-content: flex-start;
 }
 
-/* ─── Profile photo frame ─── */
-.hero-photo {
+/* ─── 3D Floating Figure Scene (oryzo.ai style) ────────────────── */
+.hero-3d-scene {
   position: relative;
   flex-shrink: 0;
+  width: 420px;
+  height: 560px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
-.photo-frame {
-  position: relative;
-  width: 330px;
-  height: 420px;
-  border-radius: 28px;
-  overflow: hidden;
-  background: #f5f7ff;
-  box-shadow:
-    0 40px 90px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(255, 255, 255, 0.12),
-    0 0 60px rgba(0, 212, 255, 0.12);
-}
-/* Bottom-fade: white photo blends into dark page */
-.photo-frame::after {
-  content: '';
+
+/* Orbit rings */
+.orbit {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 130px;
-  background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
-  z-index: 3;
+  border-radius: 50%;
+  border: 1px solid;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotateX(72deg);
   pointer-events: none;
-  border-radius: 0 0 28px 28px;
 }
-.profile-photo {
+.orbit-1 {
+  width: 340px; height: 340px;
+  border-color: rgba(0, 212, 255, 0.22);
+  animation: orbitSpin 14s linear infinite;
+}
+.orbit-2 {
+  width: 480px; height: 480px;
+  border-color: rgba(139, 92, 246, 0.16);
+  animation: orbitSpin 22s linear infinite reverse;
+}
+@keyframes orbitSpin {
+  from { transform: translate(-50%, -50%) rotateX(72deg) rotateZ(0deg); }
+  to   { transform: translate(-50%, -50%) rotateX(72deg) rotateZ(360deg); }
+}
+
+/* Dots on the rings */
+.orbit-dot {
+  position: absolute;
+  top: -5px; left: 50%;
+  transform: translateX(-50%);
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent), 0 0 24px var(--accent);
+}
+.orbit-dot-2 {
+  background: var(--accent-2);
+  box-shadow: 0 0 12px var(--accent-2), 0 0 24px var(--accent-2);
+}
+
+/* Floating animation wrapper */
+.hero-float {
+  position: relative;
+  animation: floatY 5s ease-in-out infinite;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 38%; /* offset from top to frame face, skipping white headroom */
-  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-22px); }
+}
+
+/* Tilt wrapper */
+.hero-tilt {
+  position: relative;
+  width: 320px;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+/* Aura glow behind figure */
+.figure-aura {
+  position: absolute;
+  inset: -30px;
+  background: radial-gradient(ellipse 60% 80% at 50% 60%, rgba(0, 212, 255, 0.18) 0%, rgba(139, 92, 246, 0.12) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(18px);
+}
+
+/* The actual photo — no frame, blends into dark bg */
+.hero-figure-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center bottom;
   position: relative;
   z-index: 2;
-  display: block;
+  /* subtle drop shadow for 3D depth */
+  filter: drop-shadow(0 24px 60px rgba(0, 212, 255, 0.25)) drop-shadow(0 8px 30px rgba(0, 0, 0, 0.7));
+  border-radius: 0;
 }
+
+/* Glowing ground orb / platform */
+.figure-ground-orb {
+  width: 220px;
+  height: 24px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.55) 0%, rgba(139, 92, 246, 0.3) 40%, transparent 75%);
+  filter: blur(10px);
+  margin-top: -10px;
+  animation: orbPulse 5s ease-in-out infinite;
+  z-index: 1;
+}
+@keyframes orbPulse {
+  0%, 100% { opacity: 0.7; transform: scaleX(1); }
+  50%      { opacity: 1;   transform: scaleX(1.12); }
+}
+
+/* Floating skill chips */
+.hero-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(5, 9, 18, 0.75);
+  border: 1px solid var(--border-2);
+  border-radius: 100px;
+  padding: 0.38rem 0.9rem;
+  backdrop-filter: blur(14px);
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+.hero-chip i { color: var(--accent); }
+
+.chip-1 { top: 20%; right: -30px; animation: chipFloat 5.2s ease-in-out infinite; }
+.chip-2 { top: 45%; left: -40px; animation: chipFloat 6s ease-in-out infinite 0.8s; }
+.chip-3 { top: 65%; right: -20px; animation: chipFloat 5.7s ease-in-out infinite 1.4s; }
+.chip-4 { bottom: 12%; left: -30px; animation: chipFloat 6.5s ease-in-out infinite 0.4s; }
+
+@keyframes chipFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
 
 .hero-status {
   display: inline-flex;
@@ -2247,7 +2350,7 @@ footer {
 /* ── Recognitions grid ── */
 .recog-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
 }
 
@@ -2891,9 +2994,7 @@ footer {
   .hero-split {
     gap: 3.5rem;
   }
-  .photo-frame { width: 290px; height: 370px; }
-  .photo-badge-1 { right: -32px; }
-  .photo-badge-2 { left: -32px; }
+  .hero-3d-scene { width: 360px; height: 490px; }
 }
 
 @media (max-width: 1100px) {
@@ -2916,10 +3017,12 @@ footer {
     text-align: center;
     gap: 3rem;
   }
-  .hero-photo { order: -1; display: flex; justify-content: center; }
-  .photo-frame { width: 260px; height: 330px; }
-  .photo-badge-1 { right: -20px; }
-  .photo-badge-2 { left: -20px; }
+  .hero-3d-scene { order: -1; width: 320px; height: 430px; margin-inline: auto; }
+  .hero-tilt { width: 280px; }
+  .chip-1 { right: -10px; }
+  .chip-2 { left: -10px; }
+  .chip-3 { right: -10px; }
+  .chip-4 { left: -10px; }
   .hero-text .hero-role { justify-content: center; }
   .hero-text .hero-bio { text-align: center; margin-left: auto; margin-right: auto; }
   .hero-text .hero-ctas,
@@ -2992,12 +3095,15 @@ footer {
 
   .back-top { bottom: 1rem; right: 1rem; width: 40px; height: 40px; }
 
-  .photo-frame { width: 220px; height: 280px; }
-  .photo-badge { font-size: 0.72rem; padding: 0.42rem 0.85rem; }
-  .photo-badge-1 { right: -8px; top: 5%; }
-  .photo-badge-2 { left: -8px; bottom: 8%; }
-  .photo-ring { inset: -8px; }
-  .photo-ring-2 { inset: -16px; }
+  .hero-3d-scene { width: 280px; height: 380px; }
+  .hero-tilt { width: 240px; }
+  .orbit-1 { width: 240px; height: 240px; }
+  .orbit-2 { width: 340px; height: 340px; }
+  .chip-1, .chip-2, .chip-3, .chip-4 { font-size: 0.66rem; padding: 0.3rem 0.7rem; }
+  .chip-1 { right: 0; top: 18%; }
+  .chip-2 { left: 0; top: 42%; }
+  .chip-3 { right: 0; top: 62%; }
+  .chip-4 { left: 0; bottom: 10%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
