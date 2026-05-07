@@ -480,25 +480,28 @@ body::after {
 /* Aura glow behind figure */
 .figure-aura {
   position: absolute;
-  inset: -30px;
-  background: radial-gradient(ellipse 60% 80% at 50% 60%, rgba(0, 212, 255, 0.18) 0%, rgba(139, 92, 246, 0.12) 40%, transparent 70%);
+  inset: -20px;
+  background: radial-gradient(ellipse 70% 85% at 50% 55%, rgba(0, 212, 255, 0.14) 0%, rgba(139, 92, 246, 0.09) 45%, transparent 70%);
   pointer-events: none;
   z-index: 0;
-  filter: blur(18px);
+  filter: blur(22px);
+  border-radius: 28px;
 }
 
-/* The actual photo — no frame, blends into dark bg */
+/* The actual photo — portrait card style */
 .hero-figure-img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
-  object-position: center bottom;
+  object-fit: cover;
+  object-position: center top;
   position: relative;
   z-index: 2;
-  /* subtle drop shadow for 3D depth */
-  filter: drop-shadow(0 24px 60px rgba(0, 212, 255, 0.25)) drop-shadow(0 8px 30px rgba(0, 0, 0, 0.7));
-  border-radius: 0;
+  border-radius: 20px;
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.07),
+    0 0 60px rgba(0, 212, 255, 0.12);
 }
 
 /* Glowing ground orb / platform */
