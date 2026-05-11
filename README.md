@@ -1,6 +1,6 @@
 <div align="center">
 
-> 🌐 **Portfolio Website:** [nehahaveri.github.io/Neha_Haveri](https://nehahaveri.github.io/Neha_Haveri)
+> 🌐 **Portfolio Website:** [nehahaveri.github.io/Neha_Haveri](https://www.nehahaveri.in)
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Neha%20Haveri&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Full-Stack%20Engineer%20%E2%80%A2%20AI%2FML%20Developer%20%E2%80%A2%20Microservices%20Architect&descAlignY=58&descSize=17"/>
 
